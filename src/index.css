@@ -79,8 +79,6 @@ input {
   width: 80%;
 }
 .rightside{
-  /* background-color: rgba(255, 255, 255, 0.1); */
-  /* border: 1px solid white; */
   height: 300px;
   width: 400px;
   border-radius: 30px;
@@ -94,7 +92,6 @@ input {
   font-weight: bolder;
   margin-bottom: 10px;
   display: flex;
-  /* border: 1px solid white; */
 }
 #current-icon{
   font-size: 100px;
@@ -202,7 +199,6 @@ sup{
 .day p{
   color: white;
   font-weight: bolder;
-  /* border: 1px solid white; */
   font-size: 20px;
   text-transform: capitalize;
 }
