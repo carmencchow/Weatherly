@@ -66,6 +66,7 @@ input {
 }
 
 /* Displaying Current Weather  */
+
 .current-weather{
   display: flex;
   flex-direction: column;
@@ -79,6 +80,7 @@ input {
 }
 .rightside{
   /* background-color: rgba(255, 255, 255, 0.1); */
+  /* border: 1px solid white; */
   height: 300px;
   width: 400px;
   border-radius: 30px;
@@ -92,6 +94,7 @@ input {
   font-weight: bolder;
   margin-bottom: 10px;
   display: flex;
+  /* border: 1px solid white; */
 }
 #current-icon{
   font-size: 100px;
@@ -109,24 +112,14 @@ input {
 .low{
   padding-left: 10px;
 }
-/* .sun-times{
+.sun-times{
   display: flex;
   padding: 20px;
   line-height: 20px;
-} */
+}
 .sunset{
   padding-left: 25px;
 }
-/* .suntimes{
-  display: flex;
-  width: 80%;
-  margin-left: 30px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  border-radius: 25px;
-  justify-content: space-around;
-  margin-top: 25px;
-} */
 .wind{
   margin-bottom: 5px;
 }
@@ -158,6 +151,16 @@ sup{
   opacity: 0.7;
   padding-left: 3px;
 }
+.suntimes{
+  display: flex;
+  width: 80%;
+  margin-left: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 25px;
+  justify-content: space-around;
+  margin-top: 25px;
+}
 .more-info{
   display: flex;
   width: 80%;
@@ -173,18 +176,18 @@ sup{
   margin-top: 10px;
   padding-left: 20px;
 }
-/* .sunrise, .sunset, .wind, .humidity{
+.sunrise, .sunset, .wind, .humidity{
   display: flex;
   line-height: 50px;
 }
 .sunrise .icon,
 .sunset .icon{
   padding-top: 15px;
-} */
-/* .info{
+}
+.info{
   padding-left: 20px;
   margin-top: 10px;
-} */
+}
 .label{
   padding-top: 0px;
   padding-left: 10px;
@@ -200,7 +203,7 @@ sup{
   color: white;
   font-weight: bolder;
   /* border: 1px solid white; */
-  font-size: 18px;
+  font-size: 20px;
   text-transform: capitalize;
 }
 .day{

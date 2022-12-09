@@ -59,11 +59,9 @@ function App() {
 {/* ---------- Today's Weather ---------------- */}
 
     <div className="current-display">
-      {/* -------- Left Side -------- */}
       <div className="leftside">
         <div className="temperature-box">
           <div className="temperature">
-            {/* {Math.round(weather.main.temp)} <sup>° C</sup> */}
             <Temperature temp={weather.main.temp}/><sup>° C</sup>
           </div> 
           <div className="weather">{weather.weather[0].description}</div>
@@ -103,122 +101,62 @@ function App() {
           </div>
         </div>
 
-        {/* </div>     */}
-
-        {/* <div className="more-info"> */}
-          <div className="wind">
-          <IconContext.Provider value={{style: {fontSize: '30px', paddingRight: 0}}}>
-              <BsWind/>
-            </IconContext.Provider>
-          
-          <div className="label">
-          Wind speed: {weather.wind.speed} m/sec</div>
-          </div>
-          
-          <div className="humidity">
-          <IconContext.Provider value={{style: {fontSize: '45px'}}}>
-              <WiHumidity/>
-            </IconContext.Provider>
-          
-          <div className="label">
-          Humidity: {weather.main.humidity} %</div>
-          </div>
+        <div className="wind">
+        <IconContext.Provider value={{style: {fontSize: '30px', paddingRight: 0}}}>
+            <BsWind/>
+          </IconContext.Provider>
+        
+        <div className="label">
+        Wind speed: {weather.wind.speed} m/sec</div>
         </div>
+        
+        <div className="humidity">
+        <IconContext.Provider value={{style: {fontSize: '45px'}}}>
+            <WiHumidity/>
+          </IconContext.Provider>
+        
+        <div className="label">
+        Humidity: {weather.main.humidity} %</div>
+        </div>
+      </div>
 
     </div>
-
-{/* ---------- Main Display Ends ----------- */}
 
 {/* ---------- Five Day Display ----------- */}
 
     <div className="five-day-forecast">
       <div className="day">
-        <WeatherIcons code={fiveDay.list[1].weather[0].icon} /> 
+        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[1] && fiveDay.list[1].weather && fiveDay.list[1].weather[0] && fiveDay.list[1].weather[0].icon} />
         <p>Mon</p> 
         <p>{Math.round(fiveDay.list[1].main.temp)}° C</p>
       </div>
 
       <div className="day">
-        <WeatherIcons code={fiveDay.list[2].weather[0].icon} /> 
+        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[2] && fiveDay.list[2].weather && fiveDay.list[2].weather[0] && fiveDay.list[2].weather[0].icon} />
         <p>Tues</p>
         <p>{Math.round(fiveDay.list[2].main.temp)}° C</p>
       </div>
 
       <div className="day">
-        <WeatherIcons code={fiveDay.list[3].weather[0].icon} /> 
+        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[3] && fiveDay.list[3].weather && fiveDay.list[3].weather[0] && fiveDay.list[3].weather[0].icon} />
         <p>Wed</p>
         <p>{Math.round(fiveDay.list[3].main.temp)}° C</p>
       </div>
 
       <div className="day">
-        <WeatherIcons code={fiveDay.list[4].weather[0].icon} /> 
+        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[1] && fiveDay.list[4].weather && fiveDay.list[4].weather[0] && fiveDay.list[4].weather[0].icon} />
         <p>Thurs</p> 
         <p>{Math.round(fiveDay.list[4].main.temp)}° C</p>
       </div>
 
       <div className="day">
-        <WeatherIcons code={fiveDay.list[5].weather[0].icon} /> 
+        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[5] && fiveDay.list[5].weather && fiveDay.list[5].weather[0] && fiveDay.list[5].weather[0].icon} />
         <p>Fri</p> 
         <p>{Math.round(fiveDay.list[5].main.temp)}° C</p>
       </div>
         
-      {/* </div> */}
-
     </div>
-
-{/* ---------- Five Day ENDS ----------- */}
-
-          {/* <div className="suntimes"> */}
-          
-            {/* <div className="sunrise">
-              <div className="icon">
-                <IconContext.Provider value={{style: {fontSize: '30px'}}}>
-                  <BsSun/>
-                </IconContext.Provider>
-              </div>
-              <div className="text">
-                <div className="time">
-                  {(new Date(weather.sys.sunrise * 1000)).toLocaleTimeString()}
-                </div>
-              </div>
-            </div> */}
             
-            {/* <div className="sunset">
-              <div className="icon">
-                <IconContext.Provider value={{style: {fontSize: '30px'}}}>
-                  <BsMoon/>
-                </IconContext.Provider>
-              </div>
-              <div className="text">
-                <div className="time">
-                  {(new Date(weather.sys.sunset * 1000)).toLocaleTimeString()}
-                </div>
-              </div>
-            </div> */}
-            
-          {/* </div> */}
-
-          {/* <div className="more-info">
-            <div className="wind">
-            <IconContext.Provider value={{style: {fontSize: '30px', paddingRight: 0}}}>
-                <BsWind/>
-              </IconContext.Provider>
-            
-            <div className="label">
-            Wind speed: {weather.wind.speed} m/sec</div>
-            </div>
-            
-            <div className="humidity">
-            <IconContext.Provider value={{style: {fontSize: '45px'}}}>
-                <WiHumidity/>
-              </IconContext.Provider>
-            
-            <div className="label">
-            Humidity: {weather.main.humidity} %</div>
-          </div> */}
-
-        {/* </div> */}
-
   <Footer/>
 
         </div> 
@@ -234,7 +172,6 @@ function App() {
   </div>
 
 export default App
-
 
 
 
