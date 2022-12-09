@@ -85,11 +85,10 @@ function App() {
               <BsSun/>
             </IconContext.Provider>
           </div>
-          <div className="text"> Sunrise
+          <div className="text"> Sunrise</div>
             <div className="time">
               {(new Date(weather.sys.sunrise * 1000)).toLocaleTimeString()}
             </div>
-          </div>
         </div>
 
         <div className="sunset">
@@ -98,10 +97,9 @@ function App() {
               <BsMoon/>
             </IconContext.Provider>
           </div>
-          <div className="text"> Sunset
+          <div className="text"> Sunset  </div>
             <div className="time">
               {(new Date(weather.sys.sunset * 1000)).toLocaleTimeString()}
-            </div>
           </div>
         </div>
 
