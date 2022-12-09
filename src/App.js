@@ -54,7 +54,7 @@ function App() {
 
       {(typeof weather.main != "undefined") ? (
         <div className="current-weather">
-          <div className="city">{weather.name}, {weather.sys.country}</div>
+          {/* <div className="city">{weather.name}, {weather.sys.country}</div> */}
         
 {/* ---------- Today's Weather ---------------- */}
 
@@ -75,18 +75,21 @@ function App() {
 
 {/* -------- Right Side -------- */}
       <div className="rightside">
-        <WeatherIcons id="current-icon" code={weather.weather[0].icon} />
 
+      <div className="city">{weather.name}, {weather.sys.country}</div> 
+
+        {/* <WeatherIcons id="current-icon" code={weather.weather[0].icon} /> */}
+
+      <div className="right-weather-info">
         <div className="sunrise">
           <div className="icon">
             <IconContext.Provider value={{style: {fontSize: '30px'}}}>
               <BsSun/>
             </IconContext.Provider>
           </div>
-          <div className="text"> Sunrise</div>
-            <div className="time">
-              {(new Date(weather.sys.sunrise * 1000)).toLocaleTimeString()}
-            </div>
+          <div className="time"><span>Sunrise</span> 
+            {(new Date(weather.sys.sunrise * 1000)).toLocaleTimeString()}
+          </div>
         </div>
 
         <div className="sunset">
@@ -95,20 +98,19 @@ function App() {
               <BsMoon/>
             </IconContext.Provider>
           </div>
-          <div className="text"> Sunset  </div>
-            <div className="time">
-              {(new Date(weather.sys.sunset * 1000)).toLocaleTimeString()}
-          </div>
+          <div className="time"><span>Sunset</span>
+            {(new Date(weather.sys.sunset * 1000)).toLocaleTimeString()}
         </div>
+      </div>
 
-        <div className="wind">
+      <div className="wind">
         <IconContext.Provider value={{style: {fontSize: '30px', paddingRight: 0}}}>
             <BsWind/>
           </IconContext.Provider>
         
-        <div className="label">
+      <div className="label">
         Wind speed: {weather.wind.speed} m/sec</div>
-        </div>
+      </div>
         
         <div className="humidity">
         <IconContext.Provider value={{style: {fontSize: '45px'}}}>
@@ -118,6 +120,8 @@ function App() {
         <div className="label">
         Humidity: {weather.main.humidity} %</div>
         </div>
+      </div>
+
       </div>
 
     </div>
