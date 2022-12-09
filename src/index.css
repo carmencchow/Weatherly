@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Questrial', sans-serif;
+  color: white;
+}
+.App{
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-image: url('./assets/warm.jpg');
+  background-position: bottom;
+  transition: 0.5 ease-out;
+}
+.App.cold{
+  background-image: url('./assets/cold.png');
+}
+main{
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,0.6));
+  min-height: 100vh;
+  padding: 30px;
+}
+.search{
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+}
+.searchbar{
+  width: 50%;
+  padding: 15px;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+.searchbar:focus{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  /* border: white 1px solid; */
+}
+input {
+  background-color: transparent;
+  padding: 10px 20px;
+  width: 30%;
+  font-size: 2.4 rem;
+  color: white;
+}
+::placeholder{
+  color: white;
+  font-size: 1.2rem;
+   align-items: center;
+  opacity: 0.6;
+  padding-left: 55px;
+}
+::placeholder:focus{
+  color: none;
+}
+
+/* Displaying Current Weather  */
+
+.current-weather{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-display{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.rightside{
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+}
+.city{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.temperature{
+  font-size: 200px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.weather{
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+.high-low{
+  display: flex;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+.low{
+  padding-left: 10px;
+}
+.sun-times{
+  display: flex;
+  padding: 20px;
+  line-height: 20px;
+}
+.sunset{
+  padding-left: 25px;
+}
+.wind{
+  margin-bottom: 5px;
+}
+.temperature-container{
+  display: flex;
+  align-items: center;
+}
+.celsius{
+padding-left: 20px;
+}
+.fahrenheit{
+  padding-top: 10px;
+}
+button{
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+}
+.temperature-sections{
+  display: flex;
+  flex-direction: row;
+  background-color:rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin-top: 25px;
+  border-radius: 25px;
+}
+sup{
+  font-size: 40px;
+  opacity: 0.7;
+  padding-left: 3px;
+}
+.suntimes{
+  display: flex;
+  width: 80%;
+  margin-left: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 25px;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+.more-info{
+  display: flex;
+  width: 80%;
+  margin-left: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 25px;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+.time{
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.sunrise, .sunset, .wind, .humidity{
+  display: flex;
+  line-height: 50px;
+}
+.sunrise .icon,
+.sunset .icon{
+  padding-top: 15px;
+}
+.info{
+  padding-left: 20px;
+  margin-top: 10px;
+}
+.label{
+  padding-top: 0px;
+  padding-left: 10px;
+}
+.five-day-forecast{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.day p{
+  color: white;
+  font-size: 20px;
+  /* border: 1px solid white; */
+
+}
