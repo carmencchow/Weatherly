@@ -17,7 +17,8 @@ function Temperature (props) {
     return (
       <div className="temperature-container">
         <div className="temperature">
-          {Math.round(props.temp)} <sup>° F</sup>
+          {Math.round(props.temp)} 
+          {/* <sup>° C</sup> */}
         </div> 
       </div>
     );
@@ -26,7 +27,8 @@ function Temperature (props) {
     return(
     <div className="temperature-container">
     <div className="temperature">
-      {Math.round(props.temp)} <sup>° F</sup>
+      {Math.round(props.temp)} 
+      {/* <sup>° C</sup> */}
     </div> 
   </div>
     );
