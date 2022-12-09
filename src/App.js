@@ -126,33 +126,38 @@ function App() {
 
     <div className="five-day-forecast">
       <div className="day">
+      <p>Mon</p> 
         <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[1] && fiveDay.list[1].weather && fiveDay.list[1].weather[0] && fiveDay.list[1].weather[0].icon} />
-        <p>Mon</p> 
         <p>{Math.round(fiveDay && fiveDay.list && fiveDay.list[1] && fiveDay.list[1].main && fiveDay.list[1].main.temp)}° C</p>
+        <p id="five-weather">{fiveDay && fiveDay.list && fiveDay.list[1] && fiveDay.list[1].weather && fiveDay.list[1].weather[0] && fiveDay.list[1].weather[0].description}</p>
       </div>
 
       <div className="day">
-        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[2] && fiveDay.list[2].weather && fiveDay.list[2].weather[0] && fiveDay.list[2].weather[0].icon} />
         <p>Tues</p>
+        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[2] && fiveDay.list[2].weather && fiveDay.list[2].weather[0] && fiveDay.list[2].weather[0].icon} />
         <p>{Math.round(fiveDay && fiveDay.list && fiveDay.list[2] && fiveDay.list[2].main && fiveDay.list[2].main.temp)}° C</p>
+        <p id="five-weather">{fiveDay && fiveDay.list && fiveDay.list[2] && fiveDay.list[2].weather && fiveDay.list[2].weather[0] && fiveDay.list[2].weather[0].description}</p>
       </div>
 
       <div className="day">
-        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[3] && fiveDay.list[3].weather && fiveDay.list[3].weather[0] && fiveDay.list[3].weather[0].icon} />
         <p>Wed</p>
+        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[3] && fiveDay.list[3].weather && fiveDay.list[3].weather[0] && fiveDay.list[3].weather[0].icon} />
         <p>{Math.round(fiveDay && fiveDay.list && fiveDay.list[3] && fiveDay.list[3].main && fiveDay.list[3].main.temp)}° C</p>
+        <p id="five-weather">{fiveDay && fiveDay.list && fiveDay.list[3] && fiveDay.list[3].weather && fiveDay.list[3].weather[0] && fiveDay.list[3].weather[0].description}</p>
       </div>
 
       <div className="day">
-        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[1] && fiveDay.list[4].weather && fiveDay.list[4].weather[0] && fiveDay.list[4].weather[0].icon} />
         <p>Thurs</p> 
+        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[1] && fiveDay.list[4].weather && fiveDay.list[4].weather[0] && fiveDay.list[4].weather[0].icon} />
         <p>{Math.round(fiveDay && fiveDay.list && fiveDay.list[4] && fiveDay.list[4].main && fiveDay.list[4].main.temp)}° C</p>
+        <p id="five-weather">{fiveDay && fiveDay.list && fiveDay.list[4] && fiveDay.list[4].weather && fiveDay.list[4].weather[0] && fiveDay.list[4].weather[0].description}</p>
       </div>
 
       <div className="day">
-        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[5] && fiveDay.list[5].weather && fiveDay.list[5].weather[0] && fiveDay.list[5].weather[0].icon} />
         <p>Fri</p> 
+        <WeatherIcons code={fiveDay && fiveDay.list && fiveDay.list[5] && fiveDay.list[5].weather && fiveDay.list[5].weather[0] && fiveDay.list[5].weather[0].icon} />
         <p>{Math.round(fiveDay && fiveDay.list && fiveDay.list[5] && fiveDay.list[5].main && fiveDay.list[5].main.temp)}° C</p>
+        <p id="five-weather">{fiveDay && fiveDay.list && fiveDay.list[5] && fiveDay.list[5].weather && fiveDay.list[5].weather[0] && fiveDay.list[5].weather[0].description}</p>
       </div>
         
     </div>

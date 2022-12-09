@@ -214,3 +214,8 @@ sup{
   height: 200px;
   padding: 20px;
 }
+#five-weather{
+  font-size: 14px;
+  /* font-style: italic; */
+  margin-top: 10px;
+}
