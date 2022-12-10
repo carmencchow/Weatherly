@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Moment from 'react-moment';
 import logo from './logo.svg';
 import ReactAnimatedWeather from 'react-animated-weather'
 import { BsSun, BsMoon, BsWind } from 'react-icons/bs'
@@ -7,13 +6,17 @@ import { WiHumidity } from 'react-icons/wi'
 import { IconContext } from 'react-icons'
 import WeatherIcons from './components/WeatherIcons';
 import Footer from './components/Footer';
-// import Temperature from './components/Temperature'
+import Temperature from './components/Temperature'
 import './App.css';
  
 function App() {
   const [city, setCity] = useState('')
   const [fiveDay, setFiveDay] = useState('')
   const [weather, setWeather] = useState({})
+  const [unit, setUnit] = useState('C')
+  const [hiTemp, setHiTemp] = useState()
+  const [lowTemp, setLowTemp] = useState()
+  // const [temp, setTemp] = useState()
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=75e7ccabdef5725374998f0c3f3798b2`;
   
@@ -25,7 +28,7 @@ function App() {
         .then(result => {
           console.log('search', result)
           setWeather(result);
-          setCity('Toronto');
+          setCity('');
       })
     }
   }
@@ -37,10 +40,25 @@ function App() {
           console.log('search five day', result)
           setFiveDay(result);
       })
-    }
+  }
 
-  const convertUnits = () => {}
+  // const changeUnit = unit === 'C' ? 'F' : 'C'
 
+  const convertUnits = () => {
+  //   if (unit === 'C'){
+  //     console.log(Math.round(weather.main.temp))
+  //     setUnit(changeUnit)
+  //     setTemp(Math.round(weather.main.temp))
+  //     setLowTemp(Math.round(weather.main.temp))
+  //     setHiTemp(Math.round(weather.main.temp))
+  //   }
+  //   else {
+  //     console.log(Math.round((weather.main.temp) * 9/5 + 32))
+  //     setUnit(changeUnit)
+  //     setTemp(Math.round((weather.main.temp) * 9/5 + 32))
+  //   }
+  }
+  
   return (
     <div className={(typeof weather.main != 'undefined') ? ((weather.main.temp < 18) ? 'App cold' : 'App') : 'App'}>
       <main>
@@ -63,9 +81,9 @@ function App() {
     <div className="current-display">
       <div className="leftside">
         <div className="temperature-box">
-          <div className="temperature"> 
-          {Math.round(weather.main.temp)}
-            {/* <Temperature temp={weather.main.temp}/> */}
+          <div className="temperature">
+            {/* <h4>{temp}</h4> */}
+            <Temperature temp={weather.main.temp}/>
             <sup>
               <span onClick={convertUnits}className="cel"> C </span>
               <span onClick={convertUnits}className="fah"> F</span></sup>
@@ -133,6 +151,7 @@ function App() {
       </div>
 
       </div>
+
     </div>
 
 {/* ---------- Five Day Display ----------- */}
@@ -189,6 +208,3 @@ function App() {
 </div>
 
 export default App
-
-
-
