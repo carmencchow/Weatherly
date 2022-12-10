@@ -13,6 +13,10 @@ function App() {
   const [city, setCity] = useState('')
   const [fiveDay, setFiveDay] = useState('')
   const [weather, setWeather] = useState({})
+  const [unit, setUnit] = useState('C')
+  const [hiTemp, setHiTemp] = useState()
+  const [lowTemp, setLowTemp] = useState()
+  // const [temp, setTemp] = useState()
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=75e7ccabdef5725374998f0c3f3798b2`;
   
@@ -38,6 +42,23 @@ function App() {
       })
   }
 
+  // const changeUnit = unit === 'C' ? 'F' : 'C'
+
+  const convertUnits = () => {
+  //   if (unit === 'C'){
+  //     console.log(Math.round(weather.main.temp))
+  //     setUnit(changeUnit)
+  //     setTemp(Math.round(weather.main.temp))
+  //     setLowTemp(Math.round(weather.main.temp))
+  //     setHiTemp(Math.round(weather.main.temp))
+  //   }
+  //   else {
+  //     console.log(Math.round((weather.main.temp) * 9/5 + 32))
+  //     setUnit(changeUnit)
+  //     setTemp(Math.round((weather.main.temp) * 9/5 + 32))
+  //   }
+  }
+  
   return (
     <div className={(typeof weather.main != 'undefined') ? ((weather.main.temp < 18) ? 'App cold' : 'App') : 'App'}>
       <main>
@@ -54,7 +75,6 @@ function App() {
 
       {(typeof weather.main != "undefined") ? (
         <div className="current-weather">
-          {/* <div className="city">{weather.name}, {weather.sys.country}</div> */}
         
 {/* ---------- Today's Weather ---------------- */}
 
@@ -62,7 +82,11 @@ function App() {
       <div className="leftside">
         <div className="temperature-box">
           <div className="temperature">
-            <Temperature temp={weather.main.temp}/><sup>° C</sup>
+            {/* <h4>{temp}</h4> */}
+            <Temperature temp={weather.main.temp}/>
+            <sup>
+              <span onClick={convertUnits}className="cel"> C </span>
+              <span onClick={convertUnits}className="fah"> F</span></sup>
           </div> 
           <div className="weather">{weather.weather[0].description}</div>
         </div>
@@ -73,12 +97,16 @@ function App() {
         </div>
       </div>
 
+{/* -------- Center -------- */}
+
+      <div className="centre">
+        <WeatherIcons id="current-icon" code={weather.weather[0].icon} />
+      </div>
+
 {/* -------- Right Side -------- */}
       <div className="rightside">
 
       <div className="city">{weather.name}, {weather.sys.country}</div> 
-
-        {/* <WeatherIcons id="current-icon" code={weather.weather[0].icon} /> */}
 
       <div className="right-weather-info">
         <div className="sunrise">

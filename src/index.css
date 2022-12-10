@@ -44,8 +44,8 @@ main{
   font-size: 1.2rem;
 }
 .searchbar:focus{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-  /* border: white 1px solid; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; */
+  border: white 1px solid;
 }
 input {
   background-color: transparent;
@@ -79,15 +79,16 @@ input {
   width: 80%;
 }
 .rightside{
-  height: 300px;
-  width: 400px;
-  border-radius: 30px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 20px;
 }
 .city{
-  font-size: 46px;
+  font-size: 50px;
   margin-bottom: 10px;
   padding-bottom: 6px;
-  /* border-bottom: 1px solid white; */
   display: flex;
   align-items: right;
 }
@@ -113,11 +114,6 @@ input {
 }
 .low{
   padding-left: 10px;
-}
-.sun-times{
-  display: flex;
-  padding: 20px;
-  line-height: 20px;
 }
 .sunset{
   padding-left: 25px;
@@ -152,27 +148,12 @@ sup{
   font-size: 40px;
   opacity: 0.7;
   padding-left: 3px;
+  margin-top: 40px;
+  cursor: pointer;
 }
-.suntimes{
-  display: flex;
-  width: 80%;
-  margin-left: 30px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  border-radius: 25px;
-  justify-content: space-around;
-  margin-top: 25px;
-}
-.more-info{
-  display: flex;
-  width: 80%;
-  margin-left: 30px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 25px;
-  justify-content: space-around;
-  padding-bottom: 10px;
+sup:hover{
+  opacity: 1;
+  transition: ease-in-out 2s;
 }
 .time{
   margin-top: 10px;
@@ -228,7 +209,12 @@ sup{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-top: 20px;
 }
 span{
   padding-right: 20px;
+}
+.current-display{
+  display: flex;
+  flex: row;
 }
