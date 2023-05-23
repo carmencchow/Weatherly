@@ -61,6 +61,10 @@ function App() {
           />
         </div>
 
+        <div className="city">
+          {weather.name}, {weather && weather.sys && weather.sys.country}
+        </div>
+
         {typeof weather.main != "undefined" ? (
           <div className="current-weather">
             <div className="current-display">
@@ -68,17 +72,12 @@ function App() {
                 <div className="temperature-box">
                   <div className="temperature">
                     {Math.round(weather.main.temp)}
-                    <sup>
-                      <span onClick={convertUnits} className="cel">
-                        C
-                      </span>
-                      <span onClick={convertUnits} className="fah">
-                        F
-                      </span>
-                    </sup>
-                  </div>
-                  <div className="weather">
-                    {weather.weather[0].description}
+                    <span onClick={convertUnits} className="cel">
+                      °C
+                    </span>
+                    <span onClick={convertUnits} className="fah">
+                      F
+                    </span>
                   </div>
                 </div>
 
@@ -97,72 +96,62 @@ function App() {
                   id="current-icon"
                   code={weather.weather[0].icon}
                 />
+                <div className="weather">{weather.weather[0].description}</div>
+              </div>
+            </div>
+
+            <div className="weather-stats">
+              <div className="items">
+                <div className="icon">
+                  <IconContext.Provider value={{ style: { fontSize: "30px" } }}>
+                    <BsSun />
+                  </IconContext.Provider>
+                  <span>Sunrise</span>
+                  {new Date(weather.sys.sunrise * 1000).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </div>
               </div>
 
-              <div className="rightside">
-                <div className="city">
-                  {weather.name}, {weather.sys.country}
+              <div className="items">
+                <div className="icon">
+                  <IconContext.Provider value={{ style: { fontSize: "28px" } }}>
+                    <BsMoon />
+                  </IconContext.Provider>
+                  <span>Sunset</span>
+                  {new Date(weather.sys.sunset * 1000).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
                 </div>
+              </div>
 
-                <div className="right-weather-info">
-                  <div className="sunrise">
-                    <div className="icon">
-                      <IconContext.Provider
-                        value={{ style: { fontSize: "30px" } }}
-                      >
-                        <BsSun />
-                      </IconContext.Provider>
-                    </div>
-                    <div className="time">
-                      <span>Sunrise</span>
-                      {new Date(
-                        weather.sys.sunrise * 1000
-                      ).toLocaleTimeString()}
-                    </div>
-                  </div>
+              <div className="items">
+                <div className="icon">
+                  <IconContext.Provider
+                    value={{ style: { fontSize: "30px", paddingRight: 0 } }}
+                  >
+                    <BsWind />
+                  </IconContext.Provider>
+                  <span>Wind</span>
+                  {weather.wind.speed} m/s
+                </div>
+              </div>
 
-                  <div className="sunset">
-                    <div className="icon">
-                      <IconContext.Provider
-                        value={{ style: { fontSize: "30px" } }}
-                      >
-                        <BsMoon />
-                      </IconContext.Provider>
-                    </div>
-                    <div className="time">
-                      <span>Sunset</span>
-                      {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}
-                    </div>
-                  </div>
-
-                  <div className="wind">
-                    <IconContext.Provider
-                      value={{ style: { fontSize: "30px", paddingRight: 0 } }}
-                    >
-                      <BsWind />
-                    </IconContext.Provider>
-
-                    <div className="label">
-                      Wind speed: {weather.wind.speed} m/sec
-                    </div>
-                  </div>
-
-                  <div className="humidity">
-                    <IconContext.Provider
-                      value={{ style: { fontSize: "45px" } }}
-                    >
-                      <WiHumidity />
-                    </IconContext.Provider>
-
-                    <div className="label">
-                      Humidity: {weather.main.humidity} %
-                    </div>
-                  </div>
+              <div className="items">
+                <div className="icon">
+                  <IconContext.Provider value={{ style: { fontSize: "31px" } }}>
+                    <WiHumidity />
+                  </IconContext.Provider>
+                  <span>Humidity</span>
+                  {weather.main.humidity} %
                 </div>
               </div>
             </div>
 
             <div className="five-day-forecast">
+              <span className="long-term">Next 5 Days</span>
               {days.map((day, i) => {
                 return (
                   <div className="day">
@@ -191,7 +180,10 @@ function App() {
                         </p>{" "}
                       </p>
                       <p id="five-weather">
-                        {fiveDay.list[i + 1].weather[0].description}
+                        {fiveDay &&
+                          fiveDay.list &&
+                          fiveDay.list[i + 1] &&
+                          fiveDay.list[i + 1].weather[0].description}
                       </p>
                     </div>
                   </div>

@@ -17,3 +17,9 @@ p {
   font-weight: light;
   opacity: 0.3;
 }
+
+@media (min-width: 319px) {
+  p {
+    font-size: 10px;
+  }
+}
