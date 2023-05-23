@@ -151,7 +151,7 @@ button {
   margin-top: 25px;
   border-radius: 25px;
 }
-sup {
+/* sup {
   font-size: 40px;
   opacity: 0.7;
   padding-left: 3px;
@@ -161,7 +161,7 @@ sup {
 sup:hover {
   opacity: 1;
   transition: ease-in-out 2s;
-}
+} */
 .time {
   margin-top: 10px;
   padding-left: 20px;
@@ -229,15 +229,51 @@ span {
 }
 
 @media (min-width: 200px) {
+  .city {
+    font-size: 20px;
+  }
   .temperature {
     font-size: 24px;
   }
-  .cel,
-  .fah {
-    font-size: 14px;
+  .sunrise {
+    display: block;
   }
-  .weather {
+  .sunrise-text {
+    display: none;
+  }
+  .sunrise-time {
+    margin-top: 0px;
+    color: white;
+  }
+  .cel {
     font-size: 14px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .weather,
+  .high-low {
+    font-size: 14px;
+    font-style: normal;
+  }
+  .weather-stats {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100vw;
+    margin-top: 10px;
+  }
+  .items {
+    display: flex;
+    padding: 10px;
+    margin-left: 10px;
+  }
+  /* .items span {
+    display: none;
+  } */
+  .items .icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
 
@@ -245,12 +281,7 @@ span {
   .rightside .city {
     font-size: 20px;
   }
-  .rightside,
-  .right-weather-info {
-    display: block;
-    font-size: 12px;
-    padding-top: 0px;
-  }
+
   .temperature {
     font-size: 60px;
   }
@@ -263,6 +294,7 @@ span {
   }
   .five-day-forecast {
     display: block;
+    margin-bottom: 30px;
   }
   ::placeholder {
     font-size: 0.9rem;
@@ -292,6 +324,7 @@ span {
   }
   .day-temp {
     font-size: 10px;
+    font-weight: bolder;
   }
   .right-weather-info {
     display: flex;
