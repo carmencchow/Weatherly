@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsSun, BsMoon, BsWind } from "react-icons/bs";
+import { BsSun, BsMoon, BsWind, BsSearch } from "react-icons/bs";
 import { WiHumidity } from "react-icons/wi";
 import { IconContext } from "react-icons";
 import WeatherIcons from "./components/WeatherIcons";
@@ -53,19 +53,24 @@ function App() {
             type="text"
             className="searchbar"
             value={city}
-            placeholder="Enter Location"
+            placeholder="Search for location"
             onChange={(e) => setCity(e.target.value)}
             onKeyPress={search}
           />
         </div>
 
         <div className="city">
-          Weather for
-          {weather.name} {weather && weather.sys && weather.sys.country}
+          Weather for{" "}
+          <span>
+            {weather.name} {weather && weather.sys && weather.sys.country}
+          </span>
         </div>
         <h5>
-          <div>Updated on {new Date().toLocaleDateString()}</div>
-          {new Date().toLocaleTimeString()}
+          <div className="updated">
+            Updated on {new Date().toLocaleDateString()}
+            <br></br>
+            {new Date().toLocaleTimeString()}
+          </div>
         </h5>
 
         <div className="short-term">Today's weather</div>
@@ -156,13 +161,14 @@ function App() {
                   <div className="day">
                     <div className="day-row">
                       <p className="dayofweek">{day}</p>
-                      <p className="dayofweek">
+                      {/* <p className="dayofweek">
                         {fiveDay &&
+                          fiveDay.list &&
                           fiveDay.list[i + 1] &&
                           (fiveDay.list[i + 1].dt * 1000).toLocaleString("en", {
                             weekday: "long",
                           })}
-                      </p>
+                      </p> */}
                       <WeatherIcons
                         code={
                           fiveDay &&
@@ -173,8 +179,8 @@ function App() {
                           fiveDay.list[i + 1].weather[0].icon
                         }
                       />
-                      <p className="day-temp">
-                        <p>
+                      <span className="day-temp">
+                        <span>
                           {Math.round(
                             fiveDay &&
                               fiveDay.list &&
@@ -183,14 +189,14 @@ function App() {
                               fiveDay.list[i + 1].main.temp
                           )}
                           ° C
-                        </p>{" "}
-                      </p>
-                      <p id="five-weather">
+                        </span>
+                      </span>
+                      <span id="five-weather">
                         {fiveDay &&
                           fiveDay.list &&
                           fiveDay.list[i + 1] &&
                           fiveDay.list[i + 1].weather[0].description}
-                      </p>
+                      </span>
                     </div>
                   </div>
                 );

@@ -36,6 +36,7 @@ main {
   width: 100%;
   margin-bottom: 30px;
   display: flex;
+  position: relative;
 }
 .searchbar {
   width: 50%;
@@ -123,9 +124,12 @@ h5 {
   padding-top: 30px;
   font-size: 20px;
 }
+.dayofweek {
+  padding-right: 40px;
+}
 .five-day-forecast {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: row;
   margin-top: 80px;
   width: 80%;
@@ -161,11 +165,52 @@ span {
 }
 
 @media (min-width: 200px) {
+  .search {
+    padding-top: 22px;
+    padding-bottom: 10px;
+  }
+  input {
+    height: 36px;
+  }
+  .searchbar {
+    font-size: 20px;
+    padding-top: 14px;
+    justify-content: center;
+  }
+  main {
+    padding-top: 0px;
+  }
+  ::placeholder {
+    margin-top: 10px;
+  }
+  .centre canvas {
+    height: 62px;
+  }
+  ::placeholder {
+    align-items: center;
+  }
+  .short-term {
+    display: none;
+  }
   .city {
     font-size: 20px;
+    font-weight: bolder;
+    padding-bottom: 10px;
   }
-  .temperature {
-    font-size: 24px;
+  .search-icon {
+    margin-left: 0px;
+  }
+  .long-term {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .updated {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .temperature-box .temperature {
+    font-size: 40px;
   }
   .celsius {
     font-size: 14px;
@@ -181,10 +226,11 @@ span {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 90vw;
+    width: 80vw;
     margin-top: 10px;
-    border: 1px solid white;
-    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
   }
   .items {
     display: flex;
@@ -195,6 +241,15 @@ span {
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+  .five-day-forecast {
+    margin-top: 30px;
+  }
+  .long-term {
+    margin-left: 0px;
+  }
+  .day-row {
+    width: 100%;
   }
 }
 
@@ -239,7 +294,7 @@ span {
     height: 28px;
   }
   .day-temp {
-    font-size: 10px;
+    font-size: 16px;
     font-weight: bolder;
   }
   .right-weather-info {
