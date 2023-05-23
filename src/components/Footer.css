@@ -7,13 +7,12 @@ footer {
   text-align: center;
   height: 30px;
 }
-p{
+p {
   color: white;
   justify-content: center;
   align-items: center;
   font-size: 14px;
   left: 50%;
-  /* margin-bottom: 10px; */
   letter-spacing: 1px;
   font-weight: light;
   opacity: 0.3;
