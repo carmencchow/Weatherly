@@ -11,7 +11,7 @@ function App() {
   const [fiveDay, setFiveDay] = useState("");
   const [weather, setWeather] = useState({});
 
-  const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  const days = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"];
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=75e7ccabdef5725374998f0c3f3798b2`;
 
@@ -37,8 +37,6 @@ function App() {
       });
   };
 
-  const convertUnits = () => {};
-
   return (
     <div
       className={
@@ -62,9 +60,15 @@ function App() {
         </div>
 
         <div className="city">
-          {weather.name}, {weather && weather.sys && weather.sys.country}
+          Weather for
+          {weather.name} {weather && weather.sys && weather.sys.country}
         </div>
+        <h5>
+          <div>Updated on {new Date().toLocaleDateString()}</div>
+          {new Date().toLocaleTimeString()}
+        </h5>
 
+        <div className="short-term">Today's weather</div>
         {typeof weather.main != "undefined" ? (
           <div className="current-weather">
             <div className="current-display">
@@ -72,12 +76,7 @@ function App() {
                 <div className="temperature-box">
                   <div className="temperature">
                     {Math.round(weather.main.temp)}
-                    <span onClick={convertUnits} className="cel">
-                      °C
-                    </span>
-                    <span onClick={convertUnits} className="fah">
-                      F
-                    </span>
+                    <span className="celsius">°C</span>
                   </div>
                 </div>
 
@@ -157,6 +156,13 @@ function App() {
                   <div className="day">
                     <div className="day-row">
                       <p className="dayofweek">{day}</p>
+                      <p className="dayofweek">
+                        {fiveDay &&
+                          fiveDay.list[i + 1] &&
+                          (fiveDay.list[i + 1].dt * 1000).toLocaleString("en", {
+                            weekday: "long",
+                          })}
+                      </p>
                       <WeatherIcons
                         code={
                           fiveDay &&
