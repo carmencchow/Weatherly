@@ -60,7 +60,6 @@ function App() {
         </div>
 
         <div className="city">
-          Weather for{" "}
           <span>
             {weather.name} {weather && weather.sys && weather.sys.country}
           </span>
