@@ -161,14 +161,6 @@ function App() {
                   <div className="day">
                     <div className="day-row">
                       <p className="dayofweek">{day}</p>
-                      {/* <p className="dayofweek">
-                        {fiveDay &&
-                          fiveDay.list &&
-                          fiveDay.list[i + 1] &&
-                          (fiveDay.list[i + 1].dt * 1000).toLocaleString("en", {
-                            weekday: "long",
-                          })}
-                      </p> */}
                       <WeatherIcons
                         code={
                           fiveDay &&
