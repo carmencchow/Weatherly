@@ -164,25 +164,8 @@ span {
   flex: row;
 }
 
-@media (min-width: 200px) {
-  .search {
-    padding-top: 22px;
-    padding-bottom: 10px;
-  }
-  input {
-    height: 36px;
-  }
-  .searchbar {
-    font-size: 20px;
-    padding-top: 14px;
-    justify-content: center;
-  }
-  main {
-    padding-top: 0px;
-  }
-  ::placeholder {
-    margin-top: 10px;
-  }
+/* @media (min-width: 200px) {
+
   .centre canvas {
     height: 62px;
   }
@@ -231,7 +214,7 @@ span {
     margin-left: 10px;
     font-size: 14px;
     margin-bottom: 10px;
-  }
+  } 
   .items {
     display: flex;
     padding: 10px;
@@ -251,21 +234,84 @@ span {
   .day-row {
     width: 100%;
   }
-}
+} */
 
 @media (min-width: 319px) {
   .temperature {
     font-size: 60px;
   }
+  input {
+    height: 36px;
+  }
+  .centre canvas {
+    height: 64px;
+    margin-top: 20px;
+  }
+  .short-term {
+    display: none;
+  }
+  .city {
+    font-size: 20px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+  }
+  .search {
+    margin: 0 auto 2;
+  }
+  .searchbar {
+    font-size: 20px;
+    padding-top: 14px;
+    justify-content: center;
+  }
+  .long-term {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .weather-stats {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 65vw;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .items {
+    display: flex;
+    padding: 10px;
+    margin-left: 2px;
+  }
+  .items .icon {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+  }
+  .weather,
+  .high-low {
+    font-size: 12px;
+    font-style: normal;
+    display: block;
+    align-items: left;
+  }
+  .weather {
+    padding-left: 14px;
+  }
+  .high {
+    padding-left: 10px;
+  }
   .celsius {
     font-size: 20px;
+    padding-left: 2px;
   }
   .weather {
     font-size: 14px;
   }
   .five-day-forecast {
     display: block;
-    margin-bottom: 30px;
+    width: 100%;
+    margin-top: 30px;
   }
   ::placeholder {
     font-size: 0.9rem;
@@ -288,19 +334,14 @@ span {
     margin-top: 7px;
   }
   .day-row p {
-    font-size: 14px;
+    font-size: 12px;
   }
   .day-row canvas {
     height: 28px;
   }
   .day-temp {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bolder;
-  }
-  .right-weather-info {
-    display: flex;
-    flex-direction: flex;
-    padding-top: 20px;
   }
 }
 

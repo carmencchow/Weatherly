@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsSun, BsMoon, BsWind, BsSearch } from "react-icons/bs";
+import { BsSun, BsMoon, BsWind } from "react-icons/bs";
 import { WiHumidity } from "react-icons/wi";
 import { IconContext } from "react-icons";
 import WeatherIcons from "./components/WeatherIcons";
@@ -41,7 +41,7 @@ function App() {
     <div
       className={
         typeof weather.main != "undefined"
-          ? weather.main.temp < 18
+          ? weather.main.temp < 15
             ? "App cold"
             : "App"
           : "App"
