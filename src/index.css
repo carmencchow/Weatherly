@@ -164,78 +164,6 @@ span {
   flex: row;
 }
 
-/* @media (min-width: 200px) {
-
-  .centre canvas {
-    height: 62px;
-  }
-  ::placeholder {
-    align-items: center;
-  }
-  .short-term {
-    display: none;
-  }
-  .city {
-    font-size: 20px;
-    font-weight: bolder;
-    padding-bottom: 10px;
-  }
-  .search-icon {
-    margin-left: 0px;
-  }
-  .long-term {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  .updated {
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-  .temperature-box .temperature {
-    font-size: 40px;
-  }
-  .celsius {
-    font-size: 14px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  .weather,
-  .high-low {
-    font-size: 14px;
-    font-style: normal;
-  }
-  .weather-stats {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    width: 80vw;
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  } 
-  .items {
-    display: flex;
-    padding: 10px;
-    margin-left: 10px;
-  }
-  .items .icon {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .five-day-forecast {
-    margin-top: 30px;
-  }
-  .long-term {
-    margin-left: 0px;
-  }
-  .day-row {
-    width: 100%;
-  }
-} */
-
 @media (min-width: 319px) {
   .temperature {
     font-size: 60px;
@@ -275,7 +203,7 @@ span {
     width: 65vw;
     margin-top: 10px;
     margin-left: 10px;
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 10px;
   }
   .items {
@@ -346,18 +274,59 @@ span {
 }
 
 @media (min-width: 640px) {
+  .temperature {
+    font-size: 100px;
+  }
+  .celsius {
+    font-size: 36px;
+  }
+  input {
+    height: 40px;
+  }
+  .centre canvas {
+    height: 100px;
+    margin-top: 20px;
+  }
+  .short-term {
+    display: block;
+  }
+  .city {
+    font-size: 30px;
+  }
+  .long-term {
+    font-size: 20px;
+    display: none;
+  }
+  .weather-stats {
+    font-size: 20px;
+  }
   .five-day-forecast {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     margin-top: 80px;
-    width: 80%;
+    width: 100%;
+    margin-left: 0px;
   }
-  .temperature {
-    font-size: 200px;
+  .high-low,
+  .weather {
+    font-size: 24px;
+    display: flex;
+  }
+  .day-row canvas {
+    height: 60px;
+  }
+  .items {
+    display: flex;
+    padding: 10px;
+    margin-left: 2px;
+    width: 25%;
   }
   .day-row canvas {
     height: 90px;
+  }
+  .updated {
+    font-size: 20px;
   }
   .day-row {
     display: flex;
@@ -367,9 +336,13 @@ span {
     margin-right: 20px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 25px;
-    width: 240px;
-    height: 200px;
-    padding: 20px;
+    height: 180px;
+  }
+  .day {
+    margin-right: 12px;
+  }
+  .dayofweek {
+    font-size: 40px;
   }
 }
 
@@ -377,4 +350,15 @@ span {
 }
 
 @media (min-width: 991px) {
+  .day {
+    margin-right: 10px;
+  }
+  .five-day-forecast {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 80px;
+    width: 80%;
+    margin-left: 0px;
+  }
 }
