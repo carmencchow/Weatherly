@@ -17,3 +17,7 @@ p {
   font-weight: light;
   opacity: 0.3;
 }
+.credit {
+  font-size: 10px;
+  text-decoration: none;
+}
