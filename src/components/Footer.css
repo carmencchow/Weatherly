@@ -21,3 +21,9 @@ p {
   font-size: 10px;
   text-decoration: none;
 }
+
+@media (min-width: 319px) {
+  p {
+    font-size: 10px;
+  }
+}
