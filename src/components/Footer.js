@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <p>Made by Carmen Chow 2022</p>
+      <p>Made by Carmen Chow 2023</p>
       <p className="credit">
         <a
           href="https://www.flaticon.com/free-icons/weather"
