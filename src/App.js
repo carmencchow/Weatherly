@@ -3,7 +3,6 @@ import { BsSun, BsMoon, BsWind } from "react-icons/bs";
 import { WiHumidity } from "react-icons/wi";
 import { IconContext } from "react-icons";
 import WeatherIcons from "./components/WeatherIcons";
-import Footer from "./components/Footer";
 import "./index.css";
 
 function App() {
@@ -193,7 +192,6 @@ function App() {
                 );
               })}
             </div>
-            <Footer />
           </div>
         ) : (
           ""
